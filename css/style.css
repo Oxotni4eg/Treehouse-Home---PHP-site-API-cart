@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+.cart {
+    text-align: right;
+}
+
+.cart img {
+    width: 50px;
+    height: 30px;
+}
+
 .btn {
     padding: 15px 20px;
     color: white;
@@ -245,7 +254,7 @@ footer .container-background {
     margin-left: 60px;
     position: relative;  
     display: flex;
-    align-items: left;  
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;    
 }

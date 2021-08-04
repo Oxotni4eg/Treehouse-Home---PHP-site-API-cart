@@ -9,8 +9,17 @@
     <title>Treehouse-Home</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalogStyle.css" />
+    <script src="https://unpkg.com/cookielib/src/cookie.js"></script>
+    <script defer src="js/scripts.js"></script>
 </head>
 <body>
+
+<div class="container">
+    <div class="cart">
+        <a href="cart.php"><img src="img/cart.png" alt="cart"></a>
+        <span class="sumInCart">0</span>
+    </div>
+</div>
 
 <header class="header">
     <div class="container">

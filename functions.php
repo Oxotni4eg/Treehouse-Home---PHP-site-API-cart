@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 function getProducts() {
     $ch = curl_init();
 
@@ -37,5 +39,5 @@ function showProducts() {
 
     if (!empty($html)) echo '<div class="products_list">' . $html . '</div>';
 }
-
-
+$_SESSION['test'] = 'test';
+print_r($_SESSION);
