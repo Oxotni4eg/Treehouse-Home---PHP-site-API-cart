@@ -1,13 +1,19 @@
 .products_list {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .product {
+    height: 350px;
     flex: none;
     width: calc(33.3% - 40px);
     text-align: center;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .product img {

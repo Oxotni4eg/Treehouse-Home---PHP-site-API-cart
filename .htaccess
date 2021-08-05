@@ -3,3 +3,4 @@ RewriteBase /
 
 
 ErrorDocument 404 /404.php
+RewriteRule ^cart(/?)+$ /cart.php

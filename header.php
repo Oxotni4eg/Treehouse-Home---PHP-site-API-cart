@@ -1,3 +1,9 @@
+<?php
+
+require_once('functions.php');
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,8 +22,10 @@
 
 <div class="container">
     <div class="cart">
-        <a href="cart.php"><img src="img/cart.png" alt="cart"></a>
+        <img src="img/reload.png" alt="reload" class="reload">
+        <a href="cart"><img src="img/cart.png" alt="cart"></a>
         <span class="sumInCart">0</span>
+        <span>$ <?php showCartPrice(); ?></span>
     </div>
 </div>
 

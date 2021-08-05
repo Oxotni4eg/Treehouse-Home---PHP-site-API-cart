@@ -5,11 +5,28 @@
 
 .cart {
     text-align: right;
+    position: relative;
 }
 
 .cart img {
     width: 50px;
     height: 30px;
+}
+
+.sumInCart {
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.cart .reload {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 120px;
+    cursor: pointer;
 }
 
 .btn {
@@ -460,4 +477,27 @@ footer .footer-messangers li .a-gm {
     text-transform: uppercase;
     padding: 10px 15px;
     text-align: center;
+}
+
+.headerCart {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.plus,
+.minus,
+.btn_cart,
+.delete {
+    padding: 10px 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.summ {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 30px;
 }

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 function getProducts() {
     $ch = curl_init();
@@ -31,7 +30,7 @@ function showProducts() {
             <div class="product">
                 <img src="' . $product['image'] . '" alt="' . $product['title'] . '" />
                 <h3>' . $product['title'] . '</h3>
-                <div class="product_price">' . $product['price'] . '</div>
+                <div class="product_price">$ ' . $product['price'] . '</div>
                 <div><button class="btn_cart" id="'. $product['id'] .'">Add to cart</button></div>
             </div>
             ';
@@ -39,5 +38,54 @@ function showProducts() {
 
     if (!empty($html)) echo '<div class="products_list">' . $html . '</div>';
 }
-$_SESSION['test'] = 'test';
-print_r($_SESSION);
+
+function showCartProducts() {
+    $data = getProducts();
+    $html = '';
+    $dataId = $_COOKIE;
+
+    foreach ($dataId as $productId => $count) {
+
+        $index = ((int)$productId)-1;
+        if ($index < 0) continue;
+
+        if (!empty($data[$index])) {
+
+            $html .= '
+            <div class="product" id="'. $data[$index]['id'] .'">
+                <img src="' . $data[$index]['image'] . '" alt="' . $data[$index]['title'] . '" />
+                <h3>' . $data[$index]['title'] . '</h3>
+                <div class="product_price">$ ' . $data[$index]['price'] . '</div>  
+                <p>Количество = '. $count . '</p> 
+                <div><button class="minus">-</button><button class="plus">+</button></div>
+                <div><button class="delete">Удалить товар</button></div>             
+            </div>
+            ';
+
+        }
+    }
+    if (!empty($html)) {
+        echo '<div class="products_list">' . $html . '</div>';
+    } else {
+        echo '<h2>Ваша корзина пуста</h2>';
+    }
+}
+
+function showCartPrice() {
+    $data = getProducts();
+    $dataId = $_COOKIE;
+    $cartPrice = 0;
+
+    foreach ($dataId as $productId => $count) {
+
+        $index = ((int)$productId)-1;
+        if ($index < 0) continue;
+
+        if (!empty($data[$index])) {
+            $cartPrice += ((float)($data[$index]['price']) * $count);
+        }
+    }
+
+    echo $cartPrice;
+}
+
